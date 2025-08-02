@@ -1,30 +1,35 @@
 # Dialogflow Chatbot with MySQL Backend
 
-This repository contains a Dialogflow-integrated chatbot backed by a Python service that connects to a MySQL database. It allows users to place, modify, and track food orders via conversational interface.
+This project is a food ordering chatbot integrated with Dialogflow and a Python backend using MySQL.
 
-## 🛠 Features
+## Features
 
-- Add food items to an order with specified quantities
-- Remove items from the current order
-- Complete an order and get the total price
-- Track the status of a placed order
-- Integrates with MySQL using stored procedures and functions
+- Add, remove, and complete food orders
+- Track order status
+- Store and fetch data using MySQL procedures/functions
 
-## 🧱 Tech Stack
+## Files
 
-- **Dialogflow CX/ES** — for intent detection and conversation flow
-- **Python 3** — backend logic and webhook handler
-- **MySQL** — stores orders, tracks status, and calculates totals
+- `main.py` – Handles webhook requests from Dialogflow
+- `db_helper.py` – Manages database operations
+- `generic_helper.py` – Utility functions for formatting and session handling
 
-## 📂 File Overview
+## Setup
 
-- `main.py` — Handles Dialogflow webhook requests and routes intents
-- `db_helper.py` — Manages MySQL connection, inserts, and queries
-- `generic_helper.py` — Contains utility functions for session parsing and formatting
+1. Install dependencies:
+   ```bash
+   pip install mysql-connector-python
+Configure your MySQL connection in db_helper.py.
 
-## ⚙️ Setup Instructions
+Ensure Dialogflow intents call the webhook and match:
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+order.add
+
+order.remove
+
+order.complete
+
+track.order
+
+License
+MIT
